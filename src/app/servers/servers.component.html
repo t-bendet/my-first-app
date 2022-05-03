@@ -1,2 +1,27 @@
+<label>Server Name</label>
+<!-- Event Binding -->
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)" /> -->
+<!-- Two-way-Binding -->
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+<!-- <p>{{ serverName }}</p> -->
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  Add Server
+</button>
+<!-- <p [innerText]="allowNewServer"></p> -->
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
+<label>Username</label>
+<input type="text" class="form-control" [(ngModel)]="userName" />
+<p>{{ userName }}</p>
+<button
+  class="btn btn-primary"
+  [disabled]="isUsernameEmpty()"
+  (click)="resetUsername()"
+>
+  Reset Username
+</button>
